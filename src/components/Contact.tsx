@@ -3,6 +3,7 @@ import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-reac
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { supabase } from '@/integrations/supabase/client';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -70,20 +71,27 @@ const Contact = () => {
     setLastSubmissionTime(Date.now());
     
     try {
-      // Simulate form submission (replace with actual email service)
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      // Create mailto link for now
-      const mailtoLink = `mailto:syazwanshariff@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
-        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-      )}`;
-      
-      window.location.href = mailtoLink;
-      
+      // Call the Edge Function to send email
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: {
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message
+        }
+      });
+
+      if (error) {
+        console.error('Error sending email:', error);
+        throw new Error(error.message || 'Failed to send email');
+      }
+
+      console.log('Email sent successfully:', data);
       setSubmitStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '', honeypot: '' });
       formStartTime.current = Date.now(); // Reset form start time
-    } catch (error) {
+    } catch (error: any) {
+      console.error('Error submitting form:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
