@@ -2,32 +2,33 @@ import { Award, Calendar, Users, Lightbulb, Palette, Code, Search, Presentation 
 
 const About = () => {
   const skills = [
-    { name: 'Product Design', icon: Palette, description: 'End-to-end product design' },
-    { name: 'UX Consulting', icon: Users, description: 'Strategic design guidance' },
-    { name: 'Design Systems', icon: Code, description: 'Scalable UI libraries' },
-    { name: 'Design Thinking', icon: Lightbulb, description: 'Innovation workshops' },
-    { name: 'User Research', icon: Search, description: 'Data-driven insights' },
-    { name: 'Workshops', icon: Presentation, description: 'Team facilitation' }
+    { name: 'Digital Transformation', icon: Lightbulb, description: 'Strategic digital evolution' },
+    { name: 'Experience Design', icon: Palette, description: 'End-to-end user experiences' },
+    { name: 'Team Leadership', icon: Users, description: 'Cross-functional collaboration' },
+    { name: 'UX Strategy', icon: Search, description: 'Systems thinking approach' },
+    { name: 'User Research', icon: Presentation, description: 'Data-driven insights' },
+    { name: 'Design Systems', icon: Code, description: 'Scalable UI libraries' }
   ];
 
   const technologies = [
     { name: 'Figma', category: 'Design' },
+    { name: 'Adobe XD', category: 'Design' },
     { name: 'Adobe Illustrator', category: 'Design' },
     { name: 'Adobe Photoshop', category: 'Design' },
     { name: 'Adobe After Effects', category: 'Motion' },
+    { name: 'OutSystems', category: 'Development' },
     { name: 'WordPress', category: 'Development' },
-    { name: 'WebFlow', category: 'Development' },
-    { name: 'Framer', category: 'Prototyping' },
-    { name: 'GitHub', category: 'Collaboration' },
-    { name: 'VSCode', category: 'Development' },
-    { name: 'HTML/CSS', category: 'Development' }
+    { name: 'HTML/CSS', category: 'Development' },
+    { name: 'PowerPoint', category: 'Presentation' },
+    { name: 'AWS', category: 'Cloud' }
   ];
 
   const timeline = [
-    { year: '2023', title: 'Senior UX Consultant', description: 'Leading design strategy for enterprise clients' },
-    { year: '2022', title: 'Product Design Lead', description: 'Built design systems for multiple products' },
-    { year: '2021', title: 'UX Designer', description: 'Specialized in user research and interface design' },
-    { year: '2020', title: 'Design Thinking Facilitator', description: 'Conducted workshops for innovation teams' }
+    { year: '2022-2024', title: 'AirAsia Super App - Senior Product Designer', description: 'Led design for SNAP and Hotel sections, contributing to 29% GBV growth. Mentored junior designers and maintained design system consistency.' },
+    { year: '2021-2022', title: 'MDEC - Senior UI/UX Designer', description: 'Led design and front-end development for unified SME platform. Learned OutSystems on the fly to accelerate development.' },
+    { year: '2019-2021', title: 'EY - Senior Experience Design Consultant', description: 'Partnered with clients across finance, telecom, e-commerce, and health sectors. Delivered impactful user experiences and measurable outcomes.' },
+    { year: '2018-2019', title: 'Digital Art Director & Senior Designer', description: 'Led creative teams at 9 Lives Digital and Havas. Managed Unilever brand campaigns and comprehensive rebranding initiatives.' },
+    { year: '2014-2018', title: 'Early Career - Designer & Developer', description: 'Built foundation at PETRONAS, IPG Mediabrands, and Stampede Design. Developed skills in corporate design and web development.' }
   ];
 
   return (
@@ -40,8 +41,8 @@ const About = () => {
               About Me
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              A passionate designer with a mission to create meaningful digital experiences 
-              that solve real problems and delight users.
+              Senior Product Designer with 12+ years of experience creating intuitive, impactful digital experiences. 
+              Proven track record leading design for high-growth products across travel, finance, and government sectors.
             </p>
           </div>
 
@@ -51,16 +52,15 @@ const About = () => {
               <div className="max-w-4xl mx-auto">
                 <h3 className="font-grotesk font-semibold text-2xl text-primary mb-6">My Journey</h3>
                 <p className="text-muted-foreground leading-relaxed mb-6">
-                  My design journey began with a simple belief: technology should serve humanity, 
-                  not the other way around. Over the years, I've had the privilege of working with 
-                  startups and established companies, helping them translate complex problems into 
-                  elegant, user-friendly solutions.
+                  From designing for AirAsia's SuperApp to helping Malaysia's SMEs through MDEC's platform, 
+                  my 12+ year journey has been about creating digital experiences that truly matter. I specialize 
+                  in translating complex business challenges into intuitive user experiences that drive measurable growth.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  I believe in the power of collaborative design, where diverse perspectives 
-                  come together to create something truly extraordinary. My approach combines 
-                  rigorous research, creative problem-solving, and a deep empathy for the 
-                  people who will ultimately use the products we create.
+                  My approach combines strategic UX thinking with hands-on design execution. Whether leading 
+                  cross-functional teams at EY or mentoring junior designers, I believe in collaborative design 
+                  that puts users first while achieving business objectives. I'm fluent in both Malay and English, 
+                  bringing cultural insights to every project.
                 </p>
               </div>
             </div>
