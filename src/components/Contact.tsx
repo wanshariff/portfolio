@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -9,19 +9,65 @@ const Contact = () => {
     name: '',
     email: '',
     subject: '',
-    message: ''
+    message: '',
+    honeypot: '' // Anti-spam honeypot field
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [lastSubmissionTime, setLastSubmissionTime] = useState(0);
+  const formStartTime = useRef(Date.now());
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
+  // Anti-spam validation
+  const validateForm = () => {
+    const now = Date.now();
+    const timeSinceStart = now - formStartTime.current;
+    const timeSinceLastSubmission = now - lastSubmissionTime;
+    
+    // Check honeypot field (should be empty)
+    if (formData.honeypot.trim() !== '') {
+      return { isValid: false, message: 'Spam detected.' };
+    }
+    
+    // Prevent too quick submissions (less than 3 seconds)
+    if (timeSinceStart < 3000) {
+      return { isValid: false, message: 'Please take a moment to review your message.' };
+    }
+    
+    // Rate limiting (30 seconds between submissions)
+    if (timeSinceLastSubmission < 30000 && lastSubmissionTime > 0) {
+      return { isValid: false, message: 'Please wait before submitting another message.' };
+    }
+    
+    // Basic spam keyword detection
+    const spamKeywords = ['buy now', 'click here', 'make money', 'free money', 'viagra', 'casino'];
+    const messageText = `${formData.name} ${formData.email} ${formData.subject} ${formData.message}`.toLowerCase();
+    const hasSpamKeywords = spamKeywords.some(keyword => messageText.includes(keyword));
+    
+    if (hasSpamKeywords) {
+      return { isValid: false, message: 'Message contains inappropriate content.' };
+    }
+    
+    return { isValid: true, message: '' };
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate form for spam
+    const validation = validateForm();
+    if (!validation.isValid) {
+      setSubmitStatus('error');
+      setTimeout(() => setSubmitStatus('idle'), 5000);
+      return;
+    }
+    
     setIsSubmitting(true);
+    setLastSubmissionTime(Date.now());
     
     try {
       // Simulate form submission (replace with actual email service)
@@ -35,7 +81,8 @@ const Contact = () => {
       window.location.href = mailtoLink;
       
       setSubmitStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
+      setFormData({ name: '', email: '', subject: '', message: '', honeypot: '' });
+      formStartTime.current = Date.now(); // Reset form start time
     } catch (error) {
       setSubmitStatus('error');
     } finally {
@@ -135,6 +182,17 @@ const Contact = () => {
                 </h3>
                 
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  {/* Honeypot field - hidden from users */}
+                  <input
+                    type="text"
+                    name="honeypot"
+                    value={formData.honeypot}
+                    onChange={handleInputChange}
+                    style={{ position: 'absolute', left: '-9999px', opacity: 0, pointerEvents: 'none' }}
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+                  
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="form-field">
                       <label htmlFor="name" className="block text-sm font-medium text-primary mb-2">

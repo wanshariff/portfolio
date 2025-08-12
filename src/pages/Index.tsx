@@ -106,13 +106,9 @@ const Index = () => {
           </div>
           
           <div className="border-t border-border pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="text-center">
               <div className="text-muted-foreground text-sm">
                 <p>© 2024 Wan Shariff. All rights reserved. | Product Designer & UX Consultant in Malaysia</p>
-              </div>
-              <div className="flex gap-4 text-muted-foreground text-sm">
-                <a href="/privacy" className="hover:text-accent transition-colors">Privacy Policy</a>
-                <a href="/terms" className="hover:text-accent transition-colors">Terms of Service</a>
               </div>
             </div>
           </div>
