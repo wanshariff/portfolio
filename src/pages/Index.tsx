@@ -4,13 +4,21 @@ import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Portfolio from '@/components/Portfolio';
 import Contact from '@/components/Contact';
+import FAQ from '@/components/FAQ';
+import Testimonials from '@/components/Testimonials';
+import LeadMagnet from '@/components/LeadMagnet';
+import { useScrollDepthTracking, trackPagePerformance, trackNavigation } from '@/components/Analytics';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
 
+  // Initialize analytics tracking
+  useScrollDepthTracking();
+  trackPagePerformance();
+
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'portfolio', 'contact'];
+      const sections = ['home', 'about', 'portfolio', 'resources', 'testimonials', 'faq', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -20,7 +28,10 @@ const Index = () => {
           const offsetBottom = offsetTop + element.offsetHeight;
 
           if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
-            setActiveSection(section);
+            if (activeSection !== section) {
+              setActiveSection(section);
+              trackNavigation(section, 'scroll');
+            }
             break;
           }
         }
@@ -29,7 +40,7 @@ const Index = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [activeSection]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -38,43 +49,77 @@ const Index = () => {
         <Hero />
         <About />
         <Portfolio />
+        <LeadMagnet />
+        <Testimonials />
+        <FAQ />
         <Contact />
       </main>
       
-      {/* Footer */}
-      <footer className="bg-card border-t border-border py-12">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="font-grotesk font-bold text-2xl mb-4 text-primary">Wan Shariff</div>
-            <p className="text-muted-foreground mb-6">
-              Product Designer & UX Consultant
-            </p>
-            <div className="flex justify-center space-x-6 mb-8">
-              <a 
-                href="mailto:syazwanshariff@gmail.com"
-                className="text-muted-foreground hover:text-accent transition-colors"
-              >
-                Email
-              </a>
-              <a 
-                href="https://medium.com/@syazwanshariff"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-accent transition-colors"
-              >
-                Medium
-              </a>
-              <a 
-                href="https://linkedin.com/in/syazwanshariff"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-accent transition-colors"
-              >
-                LinkedIn
-              </a>
+      {/* Enhanced Footer with SEO */}
+      <footer className="bg-surface border-t border-border py-16 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-4 gap-8 mb-12">
+            {/* Contact Info */}
+            <div>
+              <h3 className="font-grotesk font-semibold text-foreground mb-4">Contact</h3>
+              <div className="space-y-2 text-muted-foreground">
+                <p>
+                  <a href="mailto:hello@wanshariff.design" className="hover:text-accent transition-colors">
+                    hello@wanshariff.design
+                  </a>
+                </p>
+                <p>
+                  <a href="tel:+60123456789" className="hover:text-accent transition-colors">
+                    +60 12-345 6789
+                  </a>
+                </p>
+                <p>Kuala Lumpur, Malaysia</p>
+              </div>
             </div>
-            <div className="text-muted-foreground/60 text-sm">
-              © 2024 Wan Shariff. All rights reserved.
+            
+            {/* Services */}
+            <div>
+              <h3 className="font-grotesk font-semibold text-foreground mb-4">Services</h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li><a href="#portfolio" className="hover:text-accent transition-colors">Product Design</a></li>
+                <li><a href="#about" className="hover:text-accent transition-colors">UX Consulting</a></li>
+                <li><a href="#about" className="hover:text-accent transition-colors">Design Systems</a></li>
+                <li><a href="#about" className="hover:text-accent transition-colors">User Research</a></li>
+              </ul>
+            </div>
+            
+            {/* Experience */}
+            <div>
+              <h3 className="font-grotesk font-semibold text-foreground mb-4">Experience</h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li>AirAsia SuperApp</li>
+                <li>Ernst & Young (EY)</li>
+                <li>Malaysia Digital Economy Corporation</li>
+                <li>12+ Years in Design</li>
+              </ul>
+            </div>
+            
+            {/* Resources */}
+            <div>
+              <h3 className="font-grotesk font-semibold text-foreground mb-4">Resources</h3>
+              <ul className="space-y-2 text-muted-foreground">
+                <li><a href="#resources" className="hover:text-accent transition-colors">Free Templates</a></li>
+                <li><a href="https://medium.com/@wanshariff" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">Medium Articles</a></li>
+                <li><a href="#faq" className="hover:text-accent transition-colors">FAQ</a></li>
+                <li><a href="#testimonials" className="hover:text-accent transition-colors">Testimonials</a></li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="border-t border-border pt-8">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              <div className="text-muted-foreground text-sm">
+                <p>© 2024 Wan Shariff. All rights reserved. | Product Designer & UX Consultant in Malaysia</p>
+              </div>
+              <div className="flex gap-4 text-muted-foreground text-sm">
+                <a href="/privacy" className="hover:text-accent transition-colors">Privacy Policy</a>
+                <a href="/terms" className="hover:text-accent transition-colors">Terms of Service</a>
+              </div>
             </div>
           </div>
         </div>
