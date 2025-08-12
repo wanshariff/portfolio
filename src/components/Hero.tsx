@@ -13,12 +13,6 @@ const Hero = () => {
     <section id="home" className="min-h-screen flex items-center justify-center relative geometric-pattern">
       <div className="container mx-auto px-6 py-20">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Animated Logo */}
-          <div className="mb-8 animate-float">
-            <div className="mx-auto rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-background font-grotesk font-bold text-lg px-6 py-3 shadow-strong animate-glow">
-              Wan Shariff
-            </div>
-          </div>
 
           {/* Main Headline */}
           <h1 className="font-grotesk font-bold text-5xl md:text-7xl text-primary mb-6 animate-fade-in">
