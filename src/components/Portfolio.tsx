@@ -128,7 +128,7 @@ const Portfolio = () => {
                    <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
                     <Button 
                       size="sm"
-                      className="bg-accent text-white hover:bg-accent-glow hover:text-white font-medium rounded-lg px-4 py-2"
+                      className="bg-accent text-background hover:bg-accent-glow hover:text-background font-medium rounded-lg px-4 py-2"
                       onClick={() => window.open(project.mediumLink, '_blank')}
                     >
                       View Project
@@ -183,7 +183,7 @@ const Portfolio = () => {
             <Button 
               variant="outline"
               size="lg"
-              className="border-2 border-accent text-accent hover:bg-accent hover:text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105"
+              className="border-2 border-accent text-accent hover:bg-accent hover:text-background font-semibold px-8 py-4 rounded-lg transition-all duration-300 hover:scale-105"
             >
               View All Projects on Medium
               <ExternalLink className="ml-2 h-5 w-5" />
