@@ -4,9 +4,6 @@ import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Portfolio from '@/components/Portfolio';
 import Contact from '@/components/Contact';
-import FAQ from '@/components/FAQ';
-import Testimonials from '@/components/Testimonials';
-import LeadMagnet from '@/components/LeadMagnet';
 import { useScrollDepthTracking, trackPagePerformance, trackNavigation } from '@/components/Analytics';
 
 const Index = () => {
@@ -18,7 +15,7 @@ const Index = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'portfolio', 'resources', 'testimonials', 'faq', 'contact'];
+      const sections = ['home', 'about', 'portfolio', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -49,9 +46,6 @@ const Index = () => {
         <Hero />
         <About />
         <Portfolio />
-        <LeadMagnet />
-        <Testimonials />
-        <FAQ />
         <Contact />
       </main>
       
@@ -103,10 +97,10 @@ const Index = () => {
             <div>
               <h3 className="font-grotesk font-semibold text-foreground mb-4">Resources</h3>
               <ul className="space-y-2 text-muted-foreground">
-                <li><a href="#resources" className="hover:text-accent transition-colors">Free Templates</a></li>
                 <li><a href="https://medium.com/@wanshariff" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">Medium Articles</a></li>
-                <li><a href="#faq" className="hover:text-accent transition-colors">FAQ</a></li>
-                <li><a href="#testimonials" className="hover:text-accent transition-colors">Testimonials</a></li>
+                <li><a href="#portfolio" className="hover:text-accent transition-colors">Portfolio</a></li>
+                <li><a href="#about" className="hover:text-accent transition-colors">About</a></li>
+                <li><a href="#contact" className="hover:text-accent transition-colors">Contact</a></li>
               </ul>
             </div>
           </div>
