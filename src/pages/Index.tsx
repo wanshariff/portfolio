@@ -58,16 +58,16 @@ const Index = () => {
               <h3 className="font-grotesk font-semibold text-foreground mb-4">Contact</h3>
               <div className="space-y-2 text-muted-foreground">
                 <p>
-                  <a href="mailto:hello@wanshariff.design" className="hover:text-accent transition-colors">
-                    hello@wanshariff.design
+                  <a href="mailto:syazwanshariff@gmail.com" className="hover:text-accent transition-colors">
+                    syazwanshariff@gmail.com
                   </a>
                 </p>
                 <p>
-                  <a href="tel:+60123456789" className="hover:text-accent transition-colors">
-                    +60 12-345 6789
+                  <a href="tel:+60194176182" className="hover:text-accent transition-colors">
+                    +60 19-417 6182
                   </a>
                 </p>
-                <p>Kuala Lumpur, Malaysia</p>
+                <p>Shah Alam, Selangor</p>
               </div>
             </div>
             
@@ -75,10 +75,10 @@ const Index = () => {
             <div>
               <h3 className="font-grotesk font-semibold text-foreground mb-4">Services</h3>
               <ul className="space-y-2 text-muted-foreground">
-                <li><a href="#portfolio" className="hover:text-accent transition-colors">Product Design</a></li>
-                <li><a href="#about" className="hover:text-accent transition-colors">UX Consulting</a></li>
-                <li><a href="#about" className="hover:text-accent transition-colors">Design Systems</a></li>
-                <li><a href="#about" className="hover:text-accent transition-colors">User Research</a></li>
+                <li>Product Design</li>
+                <li>UX Consulting</li>
+                <li>Design Systems</li>
+                <li>User Research</li>
               </ul>
             </div>
             
