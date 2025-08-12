@@ -15,7 +15,7 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto text-center">
           {/* Animated Logo */}
           <div className="mb-8 animate-float">
-            <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-grotesk font-bold text-3xl shadow-strong animate-glow">
+            <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-background font-grotesk font-bold text-3xl shadow-strong animate-glow">
               WS
             </div>
           </div>
@@ -41,7 +41,7 @@ const Hero = () => {
             <Button 
               size="lg"
               onClick={() => scrollToSection('portfolio')}
-              className="bg-gradient-to-r from-primary to-primary-glow hover:from-primary-glow hover:to-primary text-white font-semibold px-8 py-4 rounded-full shadow-medium hover:shadow-strong transition-all duration-300 hover:scale-105"
+              className="bg-gradient-to-r from-primary to-primary-glow hover:from-primary-glow hover:to-primary text-background font-semibold px-8 py-4 rounded-full shadow-medium hover:shadow-strong transition-all duration-300 hover:scale-105"
             >
               View My Work
               <ArrowDown className="ml-2 h-5 w-5" />
@@ -51,7 +51,7 @@ const Hero = () => {
               variant="outline"
               size="lg"
               onClick={() => scrollToSection('contact')}
-              className="border-2 border-accent text-accent hover:bg-accent hover:text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:scale-105"
+              className="border-2 border-accent text-accent hover:bg-accent hover:text-background font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:scale-105"
             >
               <Mail className="mr-2 h-5 w-5" />
               Get In Touch

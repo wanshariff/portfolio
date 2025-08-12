@@ -18,25 +18,25 @@
     --popover: 85 12% 8%;
     --popover-foreground: 85 25% 92%;
 
-    /* Olive green primary */
-    --primary: 85 35% 75%;
+    /* Olive green primary - improved contrast */
+    --primary: 85 30% 70%;
     --primary-foreground: 85 12% 8%;
-    --primary-glow: 85 45% 85%;
+    --primary-glow: 85 40% 80%;
 
-    /* Muted olive tones */
+    /* Muted olive tones - better readability */
     --secondary: 85 20% 18%;
-    --secondary-foreground: 85 35% 75%;
+    --secondary-foreground: 85 30% 80%;
 
     --muted: 85 15% 15%;
-    --muted-foreground: 85 8% 65%;
+    --muted-foreground: 85 8% 75%;
 
-    /* Bright olive accent */
-    --accent: 85 55% 65%;
+    /* Bright olive accent - enhanced contrast */
+    --accent: 85 50% 60%;
     --accent-foreground: 85 12% 8%;
-    --accent-glow: 85 65% 75%;
+    --accent-glow: 85 60% 70%;
 
-    /* Warm amber accent */
-    --warm-accent: 45 95% 65%;
+    /* Warm amber accent - improved readability */
+    --warm-accent: 45 85% 60%;
     --warm-accent-foreground: 85 12% 8%;
 
     --destructive: 0 85% 60%;

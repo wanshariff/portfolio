@@ -8,7 +8,7 @@ const Portfolio = () => {
       title: 'Fixing Hotel Content Gaps for a Better Booking Experience',
       category: 'Case Study',
       description: 'Inspired by real user feedback, this project focused on addressing hotel content gaps and improving localisation quality to enhance booking experience.',
-      image: '/api/placeholder/600/400',
+      image: 'https://miro.medium.com/v2/resize:fit:1400/format:webp/1*J4J7J5QkN1XJ3jWgRZ7Dxw.png',
       tags: ['User Research', 'Content Strategy', 'UX Improvement'],
       type: 'case-study',
       mediumLink: 'https://medium.com/@syazwanshariff/fixing-hotel-content-gaps-for-a-better-booking-experience-88cf7853e5da',
@@ -19,7 +19,7 @@ const Portfolio = () => {
       title: 'Designing the SME Digital Experience for MDEC\'s Virtual DX Platform',
       category: 'Case Study',
       description: 'Sprint 0 UX: Designing and validating the core mobile-first experience for MDEC\'s platform supporting Malaysian SMEs.',
-      image: '/api/placeholder/600/400',
+      image: 'https://miro.medium.com/v2/resize:fit:1400/format:webp/1*dxQT5vK2qn7-XvV_5Z6dCw.png',
       tags: ['Mobile Design', 'SME Experience', 'Government Platform'],
       type: 'case-study',
       mediumLink: 'https://medium.com/@syazwanshariff/case-study-designing-the-sme-digital-experience-for-mdecs-virtual-dx-platform-a4963cb4b500',
@@ -30,7 +30,7 @@ const Portfolio = () => {
       title: 'Making Flight+Hotel Deals Clearer for Everyone',
       category: 'Case Study',
       description: 'Improving Clarity and Trust in AirAsia\'s SNAP Deals through enhanced user experience and clearer communication.',
-      image: '/api/placeholder/600/400',
+      image: 'https://miro.medium.com/v2/resize:fit:1400/format:webp/1*UxKvU6QGnJ5dJ2VJ9Kl8yA.png',
       tags: ['Travel UX', 'Deal Clarity', 'Trust Building'],
       type: 'case-study',
       mediumLink: 'https://medium.com/@syazwanshariff/case-study-making-flight-hotel-deals-clearer-for-everyone-6053c05369dd',
@@ -41,7 +41,7 @@ const Portfolio = () => {
       title: 'Streamlining Farm Management & myGAP Certification',
       category: 'Case Study',
       description: 'Boosting Farmer Efficiency Through a Streamlined App Experience for agricultural management and certification.',
-      image: '/api/placeholder/600/400',
+      image: 'https://miro.medium.com/v2/resize:fit:1400/format:webp/1*K4xQoLsn3ZfV_PjV_7nKbQ.png',
       tags: ['AgTech', 'Mobile App', 'Certification Process'],
       type: 'case-study',
       mediumLink: 'https://medium.com/@syazwanshariff/empowering-farmers-through-digital-innovation-d84f2d592400',
@@ -52,7 +52,7 @@ const Portfolio = () => {
       title: 'PETRONAS Upstream',
       category: 'Project Showcase',
       description: 'Diverse Creative Support for Corporate Communications including design systems and digital communications.',
-      image: '/api/placeholder/600/400',
+      image: 'https://miro.medium.com/v2/resize:fit:1400/format:webp/1*xN7pJ8YgH5KJ_ZfV9Q2L6w.png',
       tags: ['Corporate Design', 'Brand Identity', 'Communications'],
       type: 'project',
       mediumLink: 'https://medium.com/@syazwanshariff/project-showcase-petronas-upstream-c7dda061bcae',
@@ -63,7 +63,7 @@ const Portfolio = () => {
       title: 'Building a Lemang Ordering & Delivery System',
       category: 'Project Showcase',
       description: 'Digitising order and delivery operations for a family lemang business, all built with Google tools.',
-      image: '/api/placeholder/600/400',
+      image: 'https://miro.medium.com/v2/resize:fit:1400/format:webp/1*L9vTgZ2HdJ8V_YqP_5nKcQ.png',
       tags: ['Google Tools', 'Small Business', 'Digital Transformation'],
       type: 'project',
       mediumLink: 'https://medium.com/@syazwanshariff/building-a-lemang-ordering-delivery-system-powered-by-google-tools-7f4b3a7679dd',
@@ -96,13 +96,26 @@ const Portfolio = () => {
               >
                 {/* Project Image */}
                 <div className="relative h-64 bg-surface overflow-hidden">
-                  <div className="w-full h-full bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    onError={(e) => {
+                      // Fallback to gradient background if image fails to load
+                      e.currentTarget.style.display = 'none';
+                      const fallback = e.currentTarget.nextElementSibling as HTMLElement;
+                      if (fallback) {
+                        fallback.style.display = 'flex';
+                      }
+                    }}
+                  />
+                  <div className="w-full h-full bg-gradient-to-br from-primary/10 to-accent/10 hidden items-center justify-center">
                     <div className="text-center">
-                      <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-accent to-warm flex items-center justify-center">
+                      <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-accent to-warm-accent flex items-center justify-center">
                         {project.type === 'case-study' ? (
-                          <FileText className="w-8 h-8 text-white" />
+                          <FileText className="w-8 h-8 text-background" />
                         ) : (
-                          <Globe className="w-8 h-8 text-white" />
+                          <Globe className="w-8 h-8 text-background" />
                         )}
                       </div>
                       <div className="text-sm text-muted-foreground">
@@ -112,10 +125,10 @@ const Portfolio = () => {
                   </div>
                   
                   {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
                     <Button 
                       size="sm"
-                      className="bg-white text-primary hover:bg-accent hover:text-white"
+                      className="bg-accent text-background hover:bg-accent-glow hover:text-background font-medium"
                       onClick={() => window.open(project.mediumLink, '_blank')}
                     >
                       Read on Medium
