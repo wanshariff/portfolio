@@ -52,7 +52,7 @@ const Portfolio = () => {
       title: 'PETRONAS Upstream',
       category: 'Project Showcase',
       description: 'Diverse Creative Support for Corporate Communications including design systems and digital communications.',
-      image: 'https://miro.medium.com/v2/resize:fit:1400/format:webp/1*xN7pJ8YgH5KJ_ZfV9Q2L6w.png',
+      image: 'https://miro.medium.com/v2/resize:fit:1100/format:webp/1*U3HI8sFe2qiVqG0nz6mtcg.png',
       tags: ['Corporate Design', 'Brand Identity', 'Communications'],
       type: 'project',
       mediumLink: 'https://medium.com/@syazwanshariff/project-showcase-petronas-upstream-c7dda061bcae',
