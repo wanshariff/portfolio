@@ -54,13 +54,13 @@ const Contact = () => {
     {
       icon: Phone,
       label: 'Phone',
-      value: '+60 12-345 6789',
-      link: 'tel:+60123456789'
+      value: '+60 19-417 6182',
+      link: 'tel:+60194176182'
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'Kuala Lumpur, Malaysia',
+      value: 'Shah Alam, Selangor',
       link: null
     }
   ];
