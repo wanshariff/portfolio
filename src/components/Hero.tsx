@@ -15,8 +15,8 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto text-center">
           {/* Animated Logo */}
           <div className="mb-8 animate-float">
-            <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-background font-grotesk font-bold text-3xl shadow-strong animate-glow">
-              WS
+            <div className="mx-auto rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-background font-grotesk font-bold text-lg px-6 py-3 shadow-strong animate-glow">
+              Wan Shariff
             </div>
           </div>
 

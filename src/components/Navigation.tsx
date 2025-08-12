@@ -52,7 +52,7 @@ const Navigation = ({ activeSection }: NavigationProps) => {
               className="font-grotesk font-bold text-2xl text-primary cursor-pointer hover:text-accent transition-colors"
               onClick={() => scrollToSection('home')}
             >
-              WS
+              Wan Shariff
             </div>
 
             {/* Desktop Navigation */}
