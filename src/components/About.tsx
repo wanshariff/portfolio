@@ -20,7 +20,7 @@ const About = () => {
     { name: 'WordPress', category: 'Development' },
     { name: 'HTML/CSS', category: 'Development' },
     { name: 'PowerPoint', category: 'Presentation' },
-    { name: 'AWS', category: 'Cloud' }
+    
   ];
 
   const timeline = [
