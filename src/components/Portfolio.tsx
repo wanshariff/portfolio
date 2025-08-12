@@ -5,63 +5,69 @@ const Portfolio = () => {
   const projects = [
     {
       id: 1,
-      title: 'E-commerce Platform Redesign',
+      title: 'Fixing Hotel Content Gaps for a Better Booking Experience',
       category: 'Case Study',
-      description: 'Complete UX overhaul of a major e-commerce platform, resulting in 40% increase in conversion rates.',
+      description: 'Inspired by real user feedback, this project focused on addressing hotel content gaps and improving localisation quality to enhance booking experience.',
       image: '/api/placeholder/600/400',
-      tags: ['User Research', 'Prototyping', 'Design System'],
+      tags: ['User Research', 'Content Strategy', 'UX Improvement'],
       type: 'case-study',
-      mediumLink: 'https://medium.com/@wanshariff/ecommerce-redesign-case-study'
+      mediumLink: 'https://medium.com/@syazwanshariff/fixing-hotel-content-gaps-for-a-better-booking-experience-88cf7853e5da',
+      date: 'Feb 21, 2024'
     },
     {
       id: 2,
-      title: 'FinTech Mobile App',
-      category: 'Product Design',
-      description: 'Designed an intuitive mobile banking experience with focus on accessibility and security.',
+      title: 'Designing the SME Digital Experience for MDEC\'s Virtual DX Platform',
+      category: 'Case Study',
+      description: 'Sprint 0 UX: Designing and validating the core mobile-first experience for MDEC\'s platform supporting Malaysian SMEs.',
       image: '/api/placeholder/600/400',
-      tags: ['Mobile Design', 'Accessibility', 'User Testing'],
+      tags: ['Mobile Design', 'SME Experience', 'Government Platform'],
       type: 'case-study',
-      mediumLink: 'https://medium.com/@wanshariff/fintech-mobile-app-design'
+      mediumLink: 'https://medium.com/@syazwanshariff/case-study-designing-the-sme-digital-experience-for-mdecs-virtual-dx-platform-a4963cb4b500',
+      date: 'May 2, 2024'
     },
     {
       id: 3,
-      title: 'Design System Creation',
-      category: 'System Design',
-      description: 'Built a comprehensive design system for a SaaS platform serving 10,000+ users.',
+      title: 'Making Flight+Hotel Deals Clearer for Everyone',
+      category: 'Case Study',
+      description: 'Improving Clarity and Trust in AirAsia\'s SNAP Deals through enhanced user experience and clearer communication.',
       image: '/api/placeholder/600/400',
-      tags: ['Design System', 'Component Library', 'Documentation'],
+      tags: ['Travel UX', 'Deal Clarity', 'Trust Building'],
       type: 'case-study',
-      mediumLink: 'https://medium.com/@wanshariff/building-scalable-design-systems'
+      mediumLink: 'https://medium.com/@syazwanshariff/case-study-making-flight-hotel-deals-clearer-for-everyone-6053c05369dd',
+      date: 'Apr 8, 2024'
     },
     {
       id: 4,
-      title: 'Healthcare Dashboard',
-      category: 'Data Visualization',
-      description: 'Complex data visualization tool for healthcare professionals.',
+      title: 'Streamlining Farm Management & myGAP Certification',
+      category: 'Case Study',
+      description: 'Boosting Farmer Efficiency Through a Streamlined App Experience for agricultural management and certification.',
       image: '/api/placeholder/600/400',
-      tags: ['Data Viz', 'Healthcare', 'Dashboard'],
-      type: 'project',
-      mediumLink: 'https://medium.com/@wanshariff/healthcare-dashboard-design'
+      tags: ['AgTech', 'Mobile App', 'Certification Process'],
+      type: 'case-study',
+      mediumLink: 'https://medium.com/@syazwanshariff/empowering-farmers-through-digital-innovation-d84f2d592400',
+      date: 'Feb 21, 2024'
     },
     {
       id: 5,
-      title: 'Educational Platform',
-      category: 'Learning Experience',
-      description: 'Interactive learning platform design for online education.',
+      title: 'PETRONAS Upstream',
+      category: 'Project Showcase',
+      description: 'Diverse Creative Support for Corporate Communications including design systems and digital communications.',
       image: '/api/placeholder/600/400',
-      tags: ['EdTech', 'Interactive Design', 'Gamification'],
+      tags: ['Corporate Design', 'Brand Identity', 'Communications'],
       type: 'project',
-      mediumLink: 'https://medium.com/@wanshariff/educational-platform-ux'
+      mediumLink: 'https://medium.com/@syazwanshariff/project-showcase-petronas-upstream-c7dda061bcae',
+      date: '4 days ago'
     },
     {
       id: 6,
-      title: 'Smart Home Interface',
-      category: 'IoT Design',
-      description: 'Voice and touch interface design for smart home ecosystem.',
+      title: 'Building a Lemang Ordering & Delivery System',
+      category: 'Project Showcase',
+      description: 'Digitising order and delivery operations for a family lemang business, all built with Google tools.',
       image: '/api/placeholder/600/400',
-      tags: ['IoT', 'Voice UI', 'Smart Home'],
+      tags: ['Google Tools', 'Small Business', 'Digital Transformation'],
       type: 'project',
-      mediumLink: 'https://medium.com/@wanshariff/smart-home-interface-design'
+      mediumLink: 'https://medium.com/@syazwanshariff/building-a-lemang-ordering-delivery-system-powered-by-google-tools-7f4b3a7679dd',
+      date: 'Apr 30, 2024'
     }
   ];
 
